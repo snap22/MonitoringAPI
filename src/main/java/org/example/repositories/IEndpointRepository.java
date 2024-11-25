@@ -12,6 +12,8 @@ import java.util.Optional;
 
 public interface IEndpointRepository extends JpaRepository<EndpointEntity, Long>  {
 
+    boolean existsByIdAndUserId(long endpointId, long userId);
+
     @Query(value =
             "SELECT e.* " +
             "FROM endpoint e " +

@@ -1,5 +1,6 @@
 package org.example.mappers;
 
+import org.example.dto.MonitoringResultResponse;
 import org.example.entities.EndpointEntity;
 import org.example.entities.MonitoringResultEntity;
 import org.mapstruct.*;
@@ -20,4 +21,12 @@ public interface IMonitoringResultMapper {
         entity.setEndpoint(endpoint);
         entity.setCheckedAt(LocalDateTime.now());
     }
+
+    @Mappings({
+            @Mapping(source = "id", target = "id"),
+            @Mapping(source = "statusCode", target = "statusCode"),
+            @Mapping(source = "payload", target = "payload"),
+            @Mapping(source = "checkedAt", target = "checkedAt"),
+    })
+    MonitoringResultResponse toResponse(MonitoringResultEntity monitoringResultEntity);
 }

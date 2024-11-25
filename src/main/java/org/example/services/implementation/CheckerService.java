@@ -54,6 +54,7 @@ public class CheckerService implements ICheckerService {
         return currentlyCheckedEndpoints.contains(endpoint.getId());
     }
 
+    // TODO: fix to handle redirects
     public void checkEndpoint(EndpointEntity endpoint) {
         currentlyCheckedEndpoints.add(endpoint.getId());
 
