@@ -30,6 +30,6 @@ public class MonitoringResultEntity {
     private LocalDateTime checkedAt;
 
     @ManyToOne
-    @JoinColumn(name = "endpoint_id", nullable = false)
+    @JoinColumn(name = "endpoint_id")
     private EndpointEntity endpoint;
 }

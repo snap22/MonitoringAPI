@@ -6,5 +6,7 @@ import org.example.entities.UserEntity;
 public interface IUserService {
     UserEntity findByAccessToken(String accessToken);
 
+    UserEntity getCurrentUserEntity();
+
     UserResponse getCurrentUser();
 }

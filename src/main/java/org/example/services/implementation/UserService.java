@@ -26,10 +26,14 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public UserResponse getCurrentUser() {
+    public UserEntity getCurrentUserEntity() {
         Long currentUserId = getCurrentUserId();
-        UserEntity user = userRepository.findById(currentUserId).orElseThrow(() -> new ResourceNotFoundException("User not found"));
-        return userMapper.entityToResponse(user);
+        return userRepository.findById(currentUserId).orElseThrow(() -> new ResourceNotFoundException("User not found"));
+    }
+
+    @Override
+    public UserResponse getCurrentUser() {
+        return userMapper.entityToResponse(getCurrentUserEntity());
     }
 
     private Long getCurrentUserId() {

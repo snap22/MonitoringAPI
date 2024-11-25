@@ -11,8 +11,10 @@ import java.util.List;
 import java.util.Optional;
 
 public interface IEndpointRepository extends JpaRepository<EndpointEntity, Long>  {
-
+    List<EndpointEntity> findByUserId(long userId);
     boolean existsByIdAndUserId(long endpointId, long userId);
+
+    Optional<EndpointEntity> findByIdAndUserId(long endpointId, long userId);
 
     @Query(value =
             "SELECT e.* " +
