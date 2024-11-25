@@ -1,7 +1,6 @@
 package org.example.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,7 +10,7 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class MonitoredEndpointResponse {
+public class EndpointResponse {
     @JsonProperty("id")
     private Long id;
 

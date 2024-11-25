@@ -10,7 +10,7 @@ import org.hibernate.validator.constraints.Length;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class MonitoredEndpointRequest {
+public class EndpointRequest {
     @NotNull
     @NotBlank
     @Length(min = 2, max = 50)

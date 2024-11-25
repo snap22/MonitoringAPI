@@ -3,6 +3,7 @@ package org.example.entities;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
@@ -20,9 +21,14 @@ public class MonitoringResultEntity {
     @Column(name = "status_code")
     private String statusCode;
 
-    @Column(name = "payload")
+    @Column(name = "payload", columnDefinition = "TEXT")
     private String payload;
 
+    @CreationTimestamp
     @Column(name = "checked_at")
     private LocalDateTime checkedAt;
+
+    @ManyToOne
+    @JoinColumn(name = "endpoint_id", nullable = false)
+    private EndpointEntity endpoint;
 }

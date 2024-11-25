@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -33,7 +32,7 @@ public class UserEntity {
     @EqualsAndHashCode.Exclude
     @JoinColumn(name = "user_id")
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    private List<MonitoredEndpointEntity> endpoints;
+    private List<EndpointEntity> endpoints;
 
     @Transient
     public Collection<? extends GrantedAuthority> getAuthorities() {
