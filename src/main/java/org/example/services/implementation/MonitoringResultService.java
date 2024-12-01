@@ -25,7 +25,7 @@ public class MonitoringResultService implements IMonitoringResultService {
 
     @Override
     public List<MonitoringResultResponse> getResultsForCurrentUserEndpoint(long endpointId) {
-        long currentUserId = userService.getCurrentUser().getId();
+        long currentUserId = userService.getCurrentUserEntity().getId();
 
         if (!endpointRepository.existsByIdAndUserId(endpointId, currentUserId))
             throw new ResourceNotFoundException("Endpoint does not exist for given user");

@@ -23,7 +23,7 @@ public class EndpointService implements IEndpointService {
 
     @Override
     public List<EndpointResponse> getCurrentUserEndpoints() {
-        long currentUserId = userService.getCurrentUser().getId();
+        long currentUserId = userService.getCurrentUserEntity().getId();
         List<EndpointEntity> endpoints = endpointRepository.findByUserId(currentUserId);
 
         return endpoints
@@ -74,7 +74,7 @@ public class EndpointService implements IEndpointService {
     }
 
     private EndpointEntity findEndpointOrThrowError(long endpointId) {
-        long currentUserId = userService.getCurrentUser().getId();
+        long currentUserId = userService.getCurrentUserEntity().getId();
 
         return endpointRepository.findByIdAndUserId(endpointId, currentUserId)
                 .stream().findFirst()
