@@ -19,7 +19,7 @@ FROM openjdk:20-jdk-slim
 WORKDIR /app
 
 # Copy the built JAR from the builder stage
-COPY --from=builder /app/target/applifting-1.0.0.jar app.jar
+COPY --from=builder /package/target/applifting-1.0.0.jar app.jar
 
 # Expose the application port (adjust if necessary)
 EXPOSE 8080
