@@ -3,6 +3,7 @@ package org.example.repositories;
 import org.example.entities.MonitoringResultEntity;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
@@ -21,4 +22,15 @@ public interface IMonitoringResultRepository extends JpaRepository<MonitoringRes
             @Param("endpointId") long endpointId,
             Pageable pageable
     );
+
+    @Modifying
+    @Query(value = "DELETE FROM monitoring_result m " +
+            "WHERE id IN (SELECT id " +
+            "             FROM (SELECT id " +
+            "                   FROM monitoring_result " +
+            "                   WHERE endpoint_id = :endpointId " +
+            "                   ORDER BY checked_at DESC " +
+            "                   LIMIT 1000 OFFSET 10) AS outdated) "
+    , nativeQuery = true)
+    void deleteOutdatedResultsForEndpointId(@Param("endpointId") long endpointId);
 }

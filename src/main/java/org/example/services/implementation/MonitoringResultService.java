@@ -13,7 +13,6 @@ import org.example.services.IUserService;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -44,6 +43,14 @@ public class MonitoringResultService implements IMonitoringResultService {
                 .toList();
     }
 
-    // TODO: clear old results (after 11+ requests)
+    @Override
+    @Transactional
+    public void clearOutdatedResults() {
+        List<Long> endpointIds = endpointRepository.getAllIds();
+
+        for (Long endpointId: endpointIds) {
+            monitoringResultRepository.deleteOutdatedResultsForEndpointId(endpointId);
+        }
+    }
 
 }

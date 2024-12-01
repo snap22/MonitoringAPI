@@ -16,6 +16,10 @@ public interface IEndpointRepository extends JpaRepository<EndpointEntity, Long>
 
     Optional<EndpointEntity> findByIdAndUserId(long endpointId, long userId);
 
+    @Query("SELECT e.id " +
+            "FROM EndpointEntity e ")
+    List<Long> getAllIds();
+
     @Query(value =
             "SELECT e.* " +
             "FROM endpoint e " +
