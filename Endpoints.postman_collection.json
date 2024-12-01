@@ -1,0 +1,433 @@
+{
+	"info": {
+		"_postman_id": "fb8e9330-4159-42b4-a812-53e1475481da",
+		"name": "Applifting - monitoring",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16849175"
+	},
+	"item": [
+		{
+			"name": "User Batman",
+			"item": [
+				{
+					"name": "Get user info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domainUrl}}/users/me",
+							"host": [
+								"{{domainUrl}}"
+							],
+							"path": [
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get endpoints",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domainUrl}}/users/me/endpoints",
+							"host": [
+								"{{domainUrl}}"
+							],
+							"path": [
+								"users",
+								"me",
+								"endpoints"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get endpoint",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domainUrl}}/users/me/endpoints/3",
+							"host": [
+								"{{domainUrl}}"
+							],
+							"path": [
+								"users",
+								"me",
+								"endpoints",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create endpoint",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"showcase\",\n    \"url\": \"https://freetestapi.com/api/v1/books/1\",\n    \"interval\": 5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domainUrl}}/users/me/endpoints",
+							"host": [
+								"{{domainUrl}}"
+							],
+							"path": [
+								"users",
+								"me",
+								"endpoints"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update endpoint",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"showcase2\",\n    \"url\": \"https://freetestapi.com/api/v1/books/3\",\n    \"interval\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domainUrl}}/users/me/endpoints/3",
+							"host": [
+								"{{domainUrl}}"
+							],
+							"path": [
+								"users",
+								"me",
+								"endpoints",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete endpoint",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{domainUrl}}/users/me/endpoints/5",
+							"host": [
+								"{{domainUrl}}"
+							],
+							"path": [
+								"users",
+								"me",
+								"endpoints",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get endpoint results",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domainUrl}}/users/me/endpoints/3/results",
+							"host": [
+								"{{domainUrl}}"
+							],
+							"path": [
+								"users",
+								"me",
+								"endpoints",
+								"3",
+								"results"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{tokenBat}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "User Applifting",
+			"item": [
+				{
+					"name": "Get user info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domainUrl}}/users/me",
+							"host": [
+								"{{domainUrl}}"
+							],
+							"path": [
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get endpoints",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domainUrl}}/users/me/endpoints",
+							"host": [
+								"{{domainUrl}}"
+							],
+							"path": [
+								"users",
+								"me",
+								"endpoints"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get endpoint",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domainUrl}}/users/me/endpoints/1",
+							"host": [
+								"{{domainUrl}}"
+							],
+							"path": [
+								"users",
+								"me",
+								"endpoints",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create endpoint",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"showcase\",\n    \"url\": \"https://freetestapi.com/api/v1/books/-1\",\n    \"interval\": 30\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domainUrl}}/users/me/endpoints",
+							"host": [
+								"{{domainUrl}}"
+							],
+							"path": [
+								"users",
+								"me",
+								"endpoints"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update endpoint",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"showcase2\",\n    \"url\": \"https://freetestapi.com/api/v1/books/3\",\n    \"interval\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domainUrl}}/users/me/endpoints/3",
+							"host": [
+								"{{domainUrl}}"
+							],
+							"path": [
+								"users",
+								"me",
+								"endpoints",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete endpoint",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{domainUrl}}/users/me/endpoints/5",
+							"host": [
+								"{{domainUrl}}"
+							],
+							"path": [
+								"users",
+								"me",
+								"endpoints",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get endpoint results",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domainUrl}}/users/me/endpoints/1/results",
+							"host": [
+								"{{domainUrl}}"
+							],
+							"path": [
+								"users",
+								"me",
+								"endpoints",
+								"1",
+								"results"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{tokenApp}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domainUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		},
+		{
+			"key": "tokenApp",
+			"value": "93f39e2f-80de-4033-99ee-249d92736a25",
+			"type": "string"
+		},
+		{
+			"key": "tokenBat",
+			"value": "dcb20f8a-5657-4f1b-9f7f-ce65739b359e",
+			"type": "string"
+		}
+	]
+}
