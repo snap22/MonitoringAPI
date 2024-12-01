@@ -23,6 +23,15 @@ public class BearerTokenFilter extends OncePerRequestFilter {
     private final IUserService userService;
 
 
+    /**
+     * Filters incoming requests to extract and validate Bearer tokens.
+     *
+     * @param request the HttpServletRequest object
+     * @param response the HttpServletResponse object
+     * @param filterChain the FilterChain object
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {

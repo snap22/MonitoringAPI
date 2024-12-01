@@ -10,8 +10,18 @@ import org.springframework.data.repository.query.Param;
 import java.time.LocalDateTime;
 import java.util.List;
 
+/**
+ * Repository for managing monitoring result entities.
+ */
 public interface IMonitoringResultRepository extends JpaRepository<MonitoringResultEntity, Long>  {
 
+    /**
+     * Finds the most recent monitoring results for a given endpoint.
+     *
+     * @param endpointId The endpoint id.
+     * @param pageable   The pagination information.
+     * @return List of monitoring results.
+     */
     @Query("SELECT m " +
             "FROM MonitoringResultEntity  m " +
             "WHERE m.endpoint.id = :endpointId " +
@@ -23,6 +33,11 @@ public interface IMonitoringResultRepository extends JpaRepository<MonitoringRes
             Pageable pageable
     );
 
+    /**
+     * Deletes the most outdated monitoring results for a given endpoint.
+     *
+     * @param endpointId The endpoint id.
+     */
     @Modifying
     @Query(value = "DELETE FROM monitoring_result m " +
             "WHERE id IN (SELECT id " +

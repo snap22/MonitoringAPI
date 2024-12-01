@@ -7,6 +7,9 @@ import org.hibernate.annotations.CreationTimestamp;
 import java.time.LocalDateTime;
 import java.util.List;
 
+/**
+ * Entity class for representing an endpoint.
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

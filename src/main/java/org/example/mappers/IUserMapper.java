@@ -6,6 +6,9 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
+/**
+ * Mapper for converting between user related DTOs and entities.
+ */
 @Mapper(componentModel = "spring")
 public interface IUserMapper {
     @Mappings({

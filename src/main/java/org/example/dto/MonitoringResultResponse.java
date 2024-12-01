@@ -7,6 +7,9 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
+/**
+ * DTO for representing a monitoring result response.
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

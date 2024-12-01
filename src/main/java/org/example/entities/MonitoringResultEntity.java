@@ -8,6 +8,9 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
+/**
+ * Entity class for representing a monitoring result.
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

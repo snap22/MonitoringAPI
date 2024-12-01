@@ -7,6 +7,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
 
+/**
+ * DTO for creating or updating an endpoint.
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

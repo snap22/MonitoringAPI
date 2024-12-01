@@ -17,6 +17,11 @@ public class UserController {
 
     private final IUserService userService;
 
+    /**
+     * Retrieves the current user's details.
+     *
+     * @return a ResponseEntity containing the UserResponse object and HTTP status 200 (OK)
+     */
     @RequestMapping(
             method = RequestMethod.GET,
             value = "/users/me",

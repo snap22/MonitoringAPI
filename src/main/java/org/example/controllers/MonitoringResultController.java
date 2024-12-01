@@ -20,6 +20,12 @@ public class MonitoringResultController {
 
     private final IMonitoringResultService monitoringResultService;
 
+    /**
+     * Retrieves the list of monitoring results for a specific endpoint of the current user.
+     *
+     * @param endpointId the ID of the endpoint to retrieve results for
+     * @return a ResponseEntity containing the list of MonitoringResultResponse objects and HTTP status 200 (OK)
+     */
     @RequestMapping(
             method = RequestMethod.GET,
             value = "/users/me/endpoints/{endpointId}/results",

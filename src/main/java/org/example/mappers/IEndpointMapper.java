@@ -10,6 +10,9 @@ import org.springframework.web.reactive.function.client.ClientResponse;
 
 import java.time.LocalDateTime;
 
+/**
+ * Mapper for converting between endpoint related DTOs and entities.
+ */
 @Mapper(componentModel = "spring", uses = {
         IUserMapper.class
 })

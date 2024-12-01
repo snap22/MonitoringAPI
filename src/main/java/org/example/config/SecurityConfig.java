@@ -16,6 +16,9 @@ import org.springframework.security.web.authentication.logout.LogoutFilter;
 
 import static org.springframework.security.web.util.matcher.AntPathRequestMatcher.antMatcher;
 
+/**
+ * Configuration class for security.
+ */
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
@@ -23,6 +26,14 @@ public class SecurityConfig {
 
     private final BearerTokenFilter bearerTokenFilter;
 
+    /**
+     * Configures the security filter chain for authentication.
+     * This filter chain is ordered first and handles requests to the /error endpoint.
+     *
+     * @param http the HttpSecurity object to configure
+     * @return the configured SecurityFilterChain
+     * @throws Exception if an error occurs during configuration
+     */
     @Bean
     @Order(1)
     public SecurityFilterChain authenticationFilterChain(HttpSecurity http) throws Exception {
@@ -42,6 +53,14 @@ public class SecurityConfig {
         return http.build();
     }
 
+    /**
+     * Configures the security filter chain for API requests.
+     * This filter chain is ordered second and handles all other authenticated requests.
+     *
+     * @param http the HttpSecurity object to configure
+     * @return the configured SecurityFilterChain
+     * @throws Exception if an error occurs during configuration
+     */
     @Bean
     @Order(2)
     public SecurityFilterChain apiSecurityFilterChain(HttpSecurity http) throws Exception {
