@@ -53,11 +53,12 @@ public class CheckerService implements ICheckerService {
         }
     }
 
-
+    @Override
     public boolean isEndpointBeingChecked(EndpointEntity endpoint) {
         return currentlyCheckedEndpoints.contains(endpoint.getId());
     }
 
+    @Override
     public void checkEndpoint(EndpointEntity endpoint) {
         currentlyCheckedEndpoints.add(endpoint.getId());
 

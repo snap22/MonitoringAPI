@@ -53,6 +53,13 @@ public class EndpointService implements IEndpointService {
     @Transactional
     public EndpointResponse updateCurrentUserEndpoint(long endpointId, EndpointRequest request) {
         EndpointEntity endpoint = findEndpointOrThrowError(endpointId);
+
+        // Reset results for updated url
+        if (!request.getUrl().equals(endpoint.getUrl())) {
+            endpoint.getResults().clear();
+            endpoint.setLastCheckedAt(null);
+        }
+
         endpointMapper.updateFromRequest(request, endpoint);
         endpointRepository.save(endpoint);
 

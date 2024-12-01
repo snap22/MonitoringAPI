@@ -25,7 +25,7 @@ CREATE TABLE `endpoint`
 CREATE TABLE `monitoring_result`
 (
     `checked_at`  datetime(6) DEFAULT NULL,
-    `endpoint_id` bigint NOT NULL,
+    `endpoint_id` bigint,
     `id`          bigint NOT NULL AUTO_INCREMENT,
     `payload`     text,
     `status_code` varchar(255) DEFAULT NULL,
