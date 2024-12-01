@@ -24,7 +24,7 @@ public class EndpointRequest {
     @JsonProperty("url")
     private String url;
 
-    @Min(2)
+    @Min(1)
     @Max(86400) // max 1 day
     @JsonProperty("interval")
     private int interval;
